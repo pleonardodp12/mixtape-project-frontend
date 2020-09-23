@@ -1,0 +1,1 @@
+// aqui precisaremos do styled-components instalado

@@ -1,0 +1,1 @@
+//exemplo de arquitetura de componente (é assim que fala?)
