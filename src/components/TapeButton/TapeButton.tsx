@@ -22,7 +22,6 @@ const TapeButton: React.FC<TapeButtonProps> = ({ type }) => {
   };
 
   return (
-
     <StyledButton
       className={active ? 'active' : 'inactive'}
       onClick={() => {
