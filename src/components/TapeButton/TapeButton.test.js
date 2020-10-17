@@ -34,4 +34,8 @@ describe('Tape button', () => {
     const wrapper = mount(<TapeButton type='play' />);
     expect(wrapper.find('FaPlay')).toHaveLength(1);
   });
+  it('must render a container bellow the main button', () => {
+    const wrapper = shallow(<TapeButton type='stop' />);
+    expect(wrapper.find('div')).toHaveLength(1)
+  });
 });

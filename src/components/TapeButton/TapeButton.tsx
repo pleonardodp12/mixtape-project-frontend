@@ -12,7 +12,7 @@ interface iconTypes {
 }
 
 
-const TapeButton: React.FC<TapeButtonProps> = ({ type }) => {
+const TapeButton: React.FC<TapeButtonProps> = ({ type }: TapeButtonProps) => {
   const [active, setActive] = useState(false);
 
   const iconTypes: iconTypes = {
@@ -22,14 +22,17 @@ const TapeButton: React.FC<TapeButtonProps> = ({ type }) => {
   };
 
   return (
-    <StyledButton
-      className={active ? 'active' : 'inactive'}
-      onClick={() => {
-        setActive(!active);
-      }}
-    >
-      {iconTypes[type]}
-    </StyledButton>
+    <>
+      <StyledButton
+        className={active ? 'active' : 'inactive'}
+        onClick={() => {
+          setActive(!active);
+        }}
+      >
+        {iconTypes[type]}
+      </StyledButton>
+      <div/>
+    </>
   );
 };
 
