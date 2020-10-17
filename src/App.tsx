@@ -1,12 +1,13 @@
 import React from 'react';
-import TapeButton from './components/TapeButton/TapeButton';
+import Tape from './components/Tape/Tape';
+import GlobalStyles from './styles/global';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-      <TapeButton type='play'/>
-    </div>
+    <>
+      <GlobalStyles />
+      <Tape />
+    </>
   );
 }
 
