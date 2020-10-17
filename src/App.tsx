@@ -1,5 +1,5 @@
 import React from 'react';
-import Tape from './components/Tape/Tape';
+import Tape from './components/shared/Tape/Tape';
 import GlobalStyles from './styles/global';
 
 function App() {
