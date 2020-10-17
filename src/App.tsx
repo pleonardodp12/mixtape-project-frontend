@@ -1,12 +1,11 @@
 import React from 'react';
-import Tape from './components/shared/Tape/Tape';
+import StartTapeButton from './components/shared/TapeButton/TapeButton';
 import GlobalStyles from './styles/global';
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <Tape />
     </>
   );
 }
