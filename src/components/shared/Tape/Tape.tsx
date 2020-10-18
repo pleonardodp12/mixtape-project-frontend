@@ -1,33 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TapeWrapper, Pregos, TapeContent, LabelName, ContentMiddle, Track, DetailsBottom, PregosDetails } from './TapeStyles';
 
-interface Style {
-  name: string,
-  primaryColor: string,
-  image: string;
-}
-
 interface Props {
-  typeAjudaDeus: boolean,
+  active: boolean,
 }
 
-const Tape: React.FC<Props> = ({ typeAjudaDeus }: Props)=> {
-  const [ play, setPlay ] = useState(false);
 
-  const playMusic = () => {
-    setPlay(true);
-    if(!play){
-      return `100% { transform: rotateZ(360deg); }`
-    }
-    console.log(play)
-    return `0% { transform: rotateZ(0deg); }`
-  }
-
+const Tape = ({ active }: Props) => {
+  
   return (
-    <>
-      <div>
-        <button onClick={playMusic}>Play</button>
-      </div>
       <TapeWrapper>
         <Pregos />
         <Pregos />
@@ -40,7 +21,7 @@ const Tape: React.FC<Props> = ({ typeAjudaDeus }: Props)=> {
           </LabelName>
 
           <ContentMiddle>
-            <Track>
+            <Track className={active ? 'active': 'inactive'}>
               <span></span>
               <span></span>
               <span></span>
@@ -48,7 +29,7 @@ const Tape: React.FC<Props> = ({ typeAjudaDeus }: Props)=> {
               <span></span>
             </Track>
 
-            <Track>
+            <Track className={active ? 'active': 'inactive'}>
               <span></span>
               <span></span>
               <span></span>
@@ -64,7 +45,6 @@ const Tape: React.FC<Props> = ({ typeAjudaDeus }: Props)=> {
         </DetailsBottom>
         
       </TapeWrapper>
-    </>
   );
 }
 

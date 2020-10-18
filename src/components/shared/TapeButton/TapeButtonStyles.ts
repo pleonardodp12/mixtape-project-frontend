@@ -30,8 +30,8 @@ export const StyledButton = styled.button`
     width: 1em;
     height: 1em;
   }
-  }
 `;
+
 export const StyledBackground = styled.div`
   background-color: var(--inactiveButton);
   width: 1.8rem;
