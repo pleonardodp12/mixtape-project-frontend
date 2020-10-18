@@ -6,7 +6,6 @@ import TapeButton from './TapeButton';
 describe('Tape button', () => {
   it('must render a button', () => {
     const wrapper = shallow(<TapeButton type='play'/>);
-    console.log(wrapper)
     expect(wrapper.find('button')).toBeTruthy();
   });
   it('must render the FaPlay icon inside the button passing play as prop', () => {
@@ -33,9 +32,5 @@ describe('Tape button', () => {
   it('must render the correct icon given the right parameter', () => {
     const wrapper = mount(<TapeButton type='play' />);
     expect(wrapper.find('FaPlay')).toHaveLength(1);
-  });
-  it('must render a container bellow the main button', () => {
-    const wrapper = shallow(<TapeButton type='stop' />);
-    expect(wrapper.find('div')).toHaveLength(1)
   });
 });
