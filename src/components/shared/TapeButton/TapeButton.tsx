@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaPlay, FaStop, FaPause } from 'react-icons/fa';
-import { StyledButton } from './TapeButtonStyles';
+import { StyledButton, StyledBackground } from './TapeButtonStyles';
 
 interface TapeButtonProps {
   type: string;
@@ -12,7 +12,7 @@ interface iconTypes {
 }
 
 
-const TapeButton: React.FC<TapeButtonProps> = ({ type }) => {
+const TapeButton: React.FC<TapeButtonProps> = ({ type }: TapeButtonProps) => {
   const [active, setActive] = useState(false);
 
   const iconTypes: iconTypes = {
@@ -22,15 +22,17 @@ const TapeButton: React.FC<TapeButtonProps> = ({ type }) => {
   };
 
   return (
-
-    <StyledButton
-      className={active ? 'active' : 'inactive'}
-      onClick={() => {
-        setActive(!active);
-      }}
-    >
-      {iconTypes[type]}
-    </StyledButton>
+    <div>
+      <StyledButton
+        className={active ? 'active' : 'inactive'}
+        onClick={() => {
+          setActive(!active);
+        }}
+      >
+        {iconTypes[type]}
+      </StyledButton>
+      <StyledBackground/>
+    </div>
   );
 };
 
