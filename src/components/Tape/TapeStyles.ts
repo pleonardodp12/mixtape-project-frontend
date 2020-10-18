@@ -80,23 +80,65 @@ export const Track = styled.div`
   height: 20px;
   background-color: #A19D9D;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spinning 2s infinite linear;
+  
+  span {
+    position: absolute;
+    width: 2px;
+    height: 6px;
+    border-top: solid 6px black;    
+    
+    &:nth-child(1) { 
+      transform: rotate(1deg); 
+      top: 0px;
+    }
+    &:nth-child(2) { 
+      transform: rotate(70deg); 
+      right: 2.4px;
+      top: 5px;
+    }
+    &:nth-child(3) { 
+      transform: rotate(140deg); 
+      right: 5px;
+      bottom: 1.4px;
+    }
+    &:nth-child(4) { 
+      transform: rotate(220deg); 
+      left: 5px;
+      bottom: 1.4px;
+    }
+    &:nth-child(5) { 
+      transform: rotate(290deg); 
+      top: 5px;
+      left: 2.4px;
+    }
+
+    @keyframes spinning {
+      0% { transform: rotateZ(0deg); }
+      ${props => props.typeAjudaDeus ? 'background: #3b3030;' : 'background-color: var(--inactiveButton);'}
+    }
+  }
 `;
 
 export const DetailsBottom = styled.div`
+
   position: relative;
   margin: 0 auto;
   bottom: -17px;
   width: 120px;
   height: 22px;
-  background-color: #9E9396;
-  border: .1px solid #4E4346dd;
+  background-color: #C0B2B6;
+  border: solid #4E4346dd;
+  border-width: 1px 1px 0 1px;
   transform: perspective(4px) rotateX(1deg);
-  box-shadow: 0 -1px 4px 0 rgba(0,0,0, .4);
+  box-shadow: 0 -1px 2px 0 rgba(0,0,0, .4);
 `;
 
 
 export const PregosDetails = styled.span`
-  
   height: 8px;
   width: 8px;
   border-radius: 50%;
@@ -109,7 +151,6 @@ export const PregosDetails = styled.span`
     bottom: 5px;
     left: 20px;
   }
-  
   &:nth-child(2){
     bottom: 5px;
     right: 20px;
