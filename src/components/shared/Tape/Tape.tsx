@@ -5,6 +5,12 @@ interface Props {
   active: boolean,
 }
 
+interface DataTape {
+  name: string,
+  color: string,
+  image: string,
+}
+
 
 const Tape = ({ active }: Props) => {
   
